@@ -65,7 +65,8 @@ const Index = () => {
             </div>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors">Главная</button>
-              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors">О нас</button>
+              <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors">Услуги</button>
+              <button onClick={() => scrollToSection('advantages')} className="text-sm font-medium hover:text-primary transition-colors">Преимущества</button>
               <button onClick={() => scrollToSection('achievements')} className="text-sm font-medium hover:text-primary transition-colors">Достижения</button>
               <button onClick={() => scrollToSection('career')} className="text-sm font-medium hover:text-primary transition-colors">Карьера</button>
             </div>
@@ -95,9 +96,9 @@ const Index = () => {
                 <Icon name="Briefcase" className="mr-2" size={20} />
                 Присоединиться к команде
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 border-primary text-primary hover:bg-primary/10" onClick={() => scrollToSection('about')}>
-                <Icon name="Info" className="mr-2" size={20} />
-                Узнать больше
+              <Button size="lg" variant="outline" className="text-lg px-8 border-primary text-primary hover:bg-primary/10" onClick={() => scrollToSection('services')}>
+                <Icon name="Package" className="mr-2" size={20} />
+                Наши услуги
               </Button>
             </div>
           </div>
@@ -129,7 +130,7 @@ const Index = () => {
                 <div className="text-6xl font-bold text-primary mb-3 animate-counter">
                   {formatNumber(counts.clients)}
                 </div>
-                <p className="text-xl text-foreground/70">Клиентов</p>
+                <p className="text-xl text-foreground/70">Довольных клиентов</p>
               </CardContent>
             </Card>
             
@@ -146,61 +147,173 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
+      <section id="services" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                О компании
-              </h2>
-              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                <span className="text-primary font-semibold">SMM-Stars</span> — это команда профессионалов, 
-                которая помогает бизнесу расти на крупнейших маркетплейсах России.
-              </p>
-              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                За <span className="text-primary font-semibold">4 года</span> работы мы накопили огромный опыт 
-                в создании продающих карточек товаров для <span className="text-accent font-semibold">Wildberries</span> и <span className="text-accent font-semibold">Ozon</span>.
-              </p>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Наши клиенты — это <span className="text-primary font-semibold">6 миллионов</span> довольных предпринимателей, 
-                для которых мы создали более <span className="text-primary font-semibold">14 миллионов</span> качественных карточек.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-primary/10 border-primary/40 hover:bg-primary/20 transition-colors">
-                <CardContent className="pt-6 pb-6">
-                  <Icon name="TrendingUp" size={40} className="text-primary mb-3" />
-                  <h3 className="font-semibold text-xl mb-2 text-primary">Рост продаж</h3>
-                  <p className="text-sm text-foreground/70">Увеличиваем конверсию</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-primary/10 border-primary/40 hover:bg-primary/20 transition-colors">
-                <CardContent className="pt-6 pb-6">
-                  <Icon name="Award" size={40} className="text-primary mb-3" />
-                  <h3 className="font-semibold text-xl mb-2 text-primary">Качество</h3>
-                  <p className="text-sm text-foreground/70">Высокие стандарты</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-primary/10 border-primary/40 hover:bg-primary/20 transition-colors">
-                <CardContent className="pt-6 pb-6">
-                  <Icon name="Zap" size={40} className="text-primary mb-3" />
-                  <h3 className="font-semibold text-xl mb-2 text-primary">Скорость</h3>
-                  <p className="text-sm text-foreground/70">Быстрое выполнение</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-primary/10 border-primary/40 hover:bg-primary/20 transition-colors">
-                <CardContent className="pt-6 pb-6">
-                  <Icon name="Target" size={40} className="text-primary mb-3" />
-                  <h3 className="font-semibold text-xl mb-2 text-primary">Результат</h3>
-                  <p className="text-sm text-foreground/70">Гарантия успеха</p>
-                </CardContent>
-              </Card>
-            </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-6">
+            Наши услуги
+          </h2>
+          <p className="text-center text-foreground/60 mb-16 max-w-2xl mx-auto text-lg">
+            Комплексные решения для развития вашего бизнеса на маркетплейсах
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
+              <CardContent className="pt-10 pb-10">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="bg-primary/20 p-4 rounded-lg">
+                    <Icon name="Store" size={48} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-primary mb-3">Для продавцов</h3>
+                    <p className="text-foreground/80 text-lg leading-relaxed">
+                      Изучаем рынок, анализируем конкурентов и выводим ваш товар в ТОП маркетплейсов. 
+                      Создаём продающие карточки, которые привлекают покупателей и увеличивают продажи.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-primary flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Глубокий анализ рынка и конкурентов</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-primary flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Вывод товаров в ТОП выдачи</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-primary flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Профессиональное оформление карточек</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
+              <CardContent className="pt-10 pb-10">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="bg-accent/20 p-4 rounded-lg">
+                    <Icon name="Rocket" size={48} className="text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-accent mb-3">Для предпринимателей</h3>
+                    <p className="text-foreground/80 text-lg leading-relaxed">
+                      Разрабатываем индивидуальный план выхода на маркетплейсы с нуля. 
+                      Поможем выбрать нишу, настроить продажи и построить успешный бизнес.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-accent flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Разработка стратегии выхода на рынок</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-accent flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Помощь в выборе прибыльной ниши</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-accent flex-shrink-0" size={20} />
+                    <span className="text-foreground/70">Полное сопровождение от идеи до продаж</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section id="career" className="py-20 px-4 bg-secondary/50">
+      <section id="advantages" className="py-20 px-4 bg-secondary/50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-6">
+            Наши преимущества
+          </h2>
+          <p className="text-center text-foreground/60 mb-16 max-w-2xl mx-auto text-lg">
+            Почему с нами работают миллионы клиентов
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="BarChart3" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Анализ рынка и конкурентов</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Изучаем рынок в деталях, анализируем конкурентов и находим лучшие стратегии 
+                  для достижения максимальных результатов
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="GraduationCap" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Бесплатное обучение</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Обучаем каждого нового сотрудника с нуля. Вы легко освоите все процессы 
+                  и быстро начнёте работать эффективно
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Award" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Проверенные методики</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  За 4+ года работы мы отточили все процессы и используем только 
+                  эффективные решения, проверенные на миллионах карточек
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Target" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Результативность</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  6 миллионов довольных клиентов — наш главный показатель качества. 
+                  Мы нацелены на ваш успех
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Zap" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Скорость работы</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Быстрое выполнение задач без потери качества. Оперативно реагируем 
+                  на изменения рынка и требования клиентов
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/30 hover:border-primary transition-all duration-300">
+              <CardContent className="pt-10 pb-10 text-center">
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Users" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Дружная команда</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Работаем как единая команда профессионалов. Поддерживаем друг друга 
+                  и помогаем достигать общих целей
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="career" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-6">
             Присоединяйтесь к нам!
@@ -215,8 +328,8 @@ const Index = () => {
               {formSubmitted ? (
                 <div className="text-center py-12 animate-scale-in">
                   <Icon name="CheckCircle" size={64} className="mx-auto text-primary mb-4" />
-                  <h3 className="text-2xl font-bold text-primary mb-2">Спасибо!</h3>
-                  <p className="text-foreground/70">Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+                  <h3 className="text-2xl font-bold text-primary mb-2">Спасибо за отклик!</h3>
+                  <p className="text-foreground/70">Мы получили ваши данные и свяжемся с вами в ближайшее время для обсуждения деталей.</p>
                 </div>
               ) : (
                 <form className="space-y-6" onSubmit={handleSubmit}>
@@ -252,15 +365,15 @@ const Index = () => {
                   <div>
                     <label className="block text-sm font-medium text-foreground/80 mb-2">Желаемая должность</label>
                     <Input 
-                      placeholder="Редактор карточек WB / Ozon" 
+                      placeholder="Специалист по маркетплейсам" 
                       className="bg-background border-primary/30 focus:border-primary text-foreground"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground/80 mb-2">О себе *</label>
+                    <label className="block text-sm font-medium text-foreground/80 mb-2">О себе и опыте работы *</label>
                     <Textarea 
-                      placeholder="Расскажите о своем опыте работы, навыках и почему хотите работать в нашей компании..." 
+                      placeholder="Расскажите о своем опыте, навыках работы с маркетплейсами, знании WB/Ozon и почему хотите работать в нашей компании..." 
                       rows={5}
                       required
                       className="bg-background border-primary/30 focus:border-primary text-foreground resize-none"
@@ -276,12 +389,12 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-3xl mx-auto">
             <Card className="text-center bg-card border-primary/30 hover:border-primary transition-colors">
               <CardContent className="pt-8 pb-8">
-                <Icon name="Users" size={40} className="mx-auto text-primary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-primary">Работа в команде</h3>
-                <p className="text-sm text-foreground/70">Дружный коллектив профессионалов</p>
+                <Icon name="GraduationCap" size={40} className="mx-auto text-primary mb-4" />
+                <h3 className="font-semibold text-lg mb-2 text-primary">Бесплатное обучение</h3>
+                <p className="text-sm text-foreground/70">С нуля до профи</p>
               </CardContent>
             </Card>
             
@@ -289,7 +402,15 @@ const Index = () => {
               <CardContent className="pt-8 pb-8">
                 <Icon name="Home" size={40} className="mx-auto text-primary mb-4" />
                 <h3 className="font-semibold text-lg mb-2 text-primary">Удалённая работа</h3>
-                <p className="text-sm text-foreground/70">Работайте из любой точки мира</p>
+                <p className="text-sm text-foreground/70">Из любой точки мира</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center bg-card border-primary/30 hover:border-primary transition-colors">
+              <CardContent className="pt-8 pb-8">
+                <Icon name="TrendingUp" size={40} className="mx-auto text-primary mb-4" />
+                <h3 className="font-semibold text-lg mb-2 text-primary">Карьерный рост</h3>
+                <p className="text-sm text-foreground/70">Развивайтесь с нами</p>
               </CardContent>
             </Card>
           </div>
@@ -304,11 +425,11 @@ const Index = () => {
                 <Icon name="Star" size={28} className="text-primary" fill="currentColor" />
                 <div className="text-2xl font-bold text-primary">SMM-Stars</div>
               </div>
-              <p className="text-foreground/60">Развиваем бизнес на маркетплейсах</p>
+              <p className="text-foreground/60">Развиваем бизнес на маркетплейсах WB и Ozon</p>
             </div>
             <div className="text-center md:text-right">
               <p className="text-foreground/70 mb-2">© 2024 SMM-Stars. Все права защищены.</p>
-              <p className="text-sm text-foreground/50">4+ года опыта | 6M+ клиентов | 14M+ карточек</p>
+              <p className="text-sm text-foreground/50">4+ года опыта | 6М+ клиентов | 14М+ карточек</p>
             </div>
           </div>
         </div>
